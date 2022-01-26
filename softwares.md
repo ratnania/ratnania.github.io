@@ -4,7 +4,7 @@ title: Softwares
 permalink: /softwares/
 ---
 
-# Open Source codes
+### Open Source codes
 
 - [Pyccel](https://github.com/pyccel/pyccel)
 a Domain Specific Language enriching the *Python* syntax with additional semantic for Parallel computing. It can be used to generate (parallel) low-level code (Fortran) or to accelerate a *Python* code. Parallelism is exposed in a *pythonic* way using **OpenMP**, **MPI** and **OpenAcc**, allowing the user to focus on designing efficient algorithms without dealing with technical implementation details.

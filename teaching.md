@@ -4,7 +4,7 @@ title: Teaching
 permalink: /teaching/
 ---
 
-## Postgraduate level
+### Postgraduate level
 - Winter 2021 - Variational Formulations and FEM. *Lectures* UM6P / MSD 2nd year
 - Winter 2021 - Mathematics of Computer Aided Design. *Lectures* UM6P / TIUF 1st year
 - Spring 2021 - Distributed Computing and Introduction to High Performance Computing. *Lectures* UM6P / MSD 1st year
@@ -16,7 +16,7 @@ permalink: /teaching/
 - Winter 2015 - -Advanced Finite Element Methods. *Exercises. Lectures by Pr. E. Sonnendrücker* TUM
 - Winter 2014 - Finite Element Methods for Hyperbolic Systems. *Exercises. Lectures by Pr. E. Sonnendrücker* TUM
 
-## Undergraduate level
+### Undergraduate level
 - Winter 2019 - Introduction to Python. *Lectures and Exercises* UM6P
 - Spring 2011 - Analysis, 1st year, major in Math and Computer science. University of Strasbourg
 - Spring 2011 - Maple, Analysis and algebra, 1st year, major in Math and Computer science, University of Strasbourg
