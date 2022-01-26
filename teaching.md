@@ -4,8 +4,6 @@ title: Teaching
 permalink: /teaching/
 ---
 
-$$\nabla u$$
-
 ## Postgraduate level
 - Winter 2021 - Variational Formulations and FEM. *Lectures* UM6P / MSD 2nd year
 - Winter 2021 - Mathematics of Computer Aided Design. *Lectures* UM6P / TIUF 1st year
