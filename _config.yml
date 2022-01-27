@@ -9,8 +9,6 @@ permalink:           pretty
 github_username:     ratnania 
 
 markdown: kramdown
-kramdown:
-  math_engine: mathjax
 
 # About/contact
 author:
