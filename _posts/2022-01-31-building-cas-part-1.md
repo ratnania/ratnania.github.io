@@ -24,6 +24,8 @@ If $$u$$ and $$v$$ are elements of a **FunctionSpace**, and $$\alpha$$ is a scal
   \end{equation}
   $$
 
+More generally, we would like to preserve every [calculus identity](https://en.wikipedia.org/wiki/Vector_calculus_identities#Gradient).
+
 But wait a minute, there are two kinds of function spaces, one for scalar functions and the other one for vector functions. 
 
 For the moment, we will restrict ourselves to the case of scalar functions.
