@@ -11,14 +11,16 @@ If $$u$$ and $$v$$ are elements of a **FunctionSpace**, and $$\alpha$$ is a scal
  
 > 
   $$
+  \newcommand{\grad}{\mathrm{grad}}
   \begin{equation}
-    grad(u+v) = grad(u) + grad(v)
+    \grad(u+v) = \grad(u) + \grad(v)
   \end{equation}
   $$
 > 
   $$
+  \newcommand{\grad}{\mathrm{grad}}
   \begin{equation}
-    grad(\alpha u) = \alpha grad(u)
+    \grad(\alpha~u) = \alpha~\grad(u)
   \end{equation}
   $$
 
@@ -196,8 +198,9 @@ The first rule we will implement is
 
 >
   $$
+  \newcommand{\grad}{\mathrm{grad}}
   \begin{equation}
-  grad(\alpha) = 0, \quad \mbox{if} ~\alpha~ \mbox{is a scalar}
+  \grad(\alpha) = 0, \quad \mbox{if} ~\alpha~ \mbox{is a scalar}
   \end{equation}
   $$
 
@@ -226,12 +229,13 @@ The second rule we will implement is
 
 >
   $$
+  \newcommand{\grad}{\mathrm{grad}}
   \begin{equation}
-    grad(u+v) = grad(u) + grad(v)
+    \grad(u+v) = \grad(u) + \grad(v)
   \end{equation}
   $$
 
-Implementing this rule is quite simple:
+Implementing this rule is the following:
 ```python
     @classmethod
     def eval(cls, expr):
@@ -243,6 +247,7 @@ Implementing this rule is quite simple:
 
         ...
 ```
+This rule is placed at the begining of the **eval** method.
 
 Now we ensure that 
 ```python
@@ -251,4 +256,42 @@ assert(Grad(u+alpha) == Grad(u))
 assert(Grad(u+v) == Grad(u) + Grad(v))
 ```
 
+### Product rule for multiplication by a scalar 
+
+The third rule we will implement is 
+
+>
+  $$
+  \newcommand{\grad}{\mathrm{grad}}
+  \begin{equation}
+    \grad(uv) = u~\grad(v) + v~\grad(u)
+  \end{equation}
+  $$
+
+Implementing this rule is quite simple:
+```python
+    @classmethod
+    def eval(cls, expr):
+
+        ...
+        if isinstance(expr, Mul):
+            left = expr.args[0]
+            right = expr.args[1:]
+            right = reduce(mul, right)
+
+            d_left = cls(left, evaluate=True)
+            d_right = cls(right, evaluate=True)
+
+            return left * d_right + right * d_left
+
+        ...
+```
+This rule is placed after the **Add** rule in the **eval** method.
+
+Now we ensure that 
+```python
+assert(Grad(3*u) == 3*Grad(u))
+assert(Grad(alpha*u) == alpha*Grad(u))
+assert(Grad(u*v) == v*Grad(u) + u*Grad(v))
+```
 

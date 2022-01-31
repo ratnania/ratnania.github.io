@@ -110,6 +110,16 @@ class Grad(Function):
             args = [cls(i) for i in args]
             return reduce(add, args)
 
+        if isinstance(expr, Mul):
+            left = expr.args[0]
+            right = expr.args[1:]
+            right = reduce(mul, right)
+
+            d_left = cls(left, evaluate=True)
+            d_right = cls(right, evaluate=True)
+
+            return left * d_right + right * d_left
+
         if not isinstance(expr, ScalarFunction):
             if expr.is_number:
                 return S.Zero
@@ -140,13 +150,19 @@ def test_grad_1():
     alpha = Scalar('alpha')
     beta  = Scalar('beta')
 
+    # Scalars
     assert(Grad(3) == 0)
     assert(Grad(alpha) == 0)
+
+    # Distributive property
     assert(Grad(u+v) == Grad(u) + Grad(v))
     assert(Grad(u+3) == Grad(u))
     assert(Grad(u+alpha) == Grad(u))
-#    expr = Grad(u+v)
-#    print(expr)
+
+    # Product rule for multiplication by a scalar
+    assert(Grad(3*u) == 3*Grad(u))
+    assert(Grad(alpha*u) == alpha*Grad(u))
+    assert(Grad(u*v) == v*Grad(u) + u*Grad(v))
 
 ################################################################################
 if __name__ == '__main__':
