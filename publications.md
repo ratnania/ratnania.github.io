@@ -7,7 +7,7 @@ permalink: /publications/
 ### Peer Reviewed Journals
 
 14. M.A. Hamadi, K. Jbilou and A. Ratnani, [An efficient extended block Arnoldi algorithm for feedback stabilization of incompressible Navier-Stokes flow problems](https://www.sciencedirect.com/science/article/abs/pii/S0168927422000113), *Applied Numerical Mathematics, 2022*
-13. A. Bentbib, A. El-Hachimi, K. Jbilou and A. Ratnani, *On the tensor nuclear norm and the total variation regularization for image and video completion*, *Journal of Optimization Theory and Applications, 2021*
+13. A. Bentbib, A. El-Hachimi, K. Jbilou and A. Ratnani, [On the tensor nuclear norm and the total variation regularization for image and video completion](https://link.springer.com/article/10.1007%2Fs10957-021-01947-3), *Journal of Optimization Theory and Applications, 2021*
 12. A. Chkifa, M. A. Hamadi, K. Jbilou and A. Ratnani [A computational method for model reduction in index-2 dynamical systems for Stokes equations](https://www.sciencedirect.com/science/article/pii/S0898122121002935). *Computers and Mathelmatics with Applications, 99, October 2021*
 11. M. A. Hamadi, K. Jbilou and A. Ratnani [A model reduction method in large scale dynamical systems using an extended-rational block Arnoldi method](https://link.springer.com/article/10.1007/s12190-021-01521-0). *Journal of Applied Mathematics and Computing, March 2021*
 10. M. Elkarii, C. Bouallou and A. Ratnani [Towards Modelling a Diphasic Flow Using the CFD Technique to Achieve a Digital Twin of a Phosphate Slurry Piping Process](https://www.cetjournal.it/index.php/cet/article/view/CET2081127). *Chemical Engineering Transactions 81, August 2020*
