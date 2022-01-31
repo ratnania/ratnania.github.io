@@ -1,6 +1,6 @@
 ---
-layout: home 
-title: About 
+layout: page 
+title: About
 ---
 
 I am an Assistant Professor in Applied Mathematics and Computer Science at [UM6P](www.um6p.ma).
