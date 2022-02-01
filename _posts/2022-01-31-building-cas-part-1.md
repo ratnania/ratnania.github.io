@@ -353,3 +353,7 @@ Now we ensure that
 assert(Grad(u/v) == -u*Grad(v)*v**(-2) + v**(-1)*Grad(u))
 ```
 
+## Getting the code
+
+You can find the code associated to this post [here](https://github.com/ratnania/ratnania.github.io/blob/gh-pages/codes/building-cas-using-sympy/step_1.py).
+
