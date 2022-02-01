@@ -120,6 +120,17 @@ class Grad(Function):
 
             return left * d_right + right * d_left
 
+        if isinstance(expr, Pow):
+            b = expr.base
+            e = expr.exp
+            a = cls(b)
+            expr = expr.func(b, e-1)
+            if isinstance(a, Add):
+                expr = reduce(add, [e*expr*i for i in a.args])
+            else:
+                expr = e*a*expr
+            return expr
+
         if not isinstance(expr, ScalarFunction):
             if expr.is_number:
                 return S.Zero
@@ -163,6 +174,10 @@ def test_grad_1():
     assert(Grad(3*u) == 3*Grad(u))
     assert(Grad(alpha*u) == alpha*Grad(u))
     assert(Grad(u*v) == v*Grad(u) + u*Grad(v))
+    assert(Grad(u/v) == -u*Grad(v)*v**(-2) + v**(-1)*Grad(u))
+
+#    expr = Grad(u/v)
+#    print(expr)
 
 ################################################################################
 if __name__ == '__main__':

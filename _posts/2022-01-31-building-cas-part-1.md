@@ -297,3 +297,59 @@ assert(Grad(alpha*u) == alpha*Grad(u))
 assert(Grad(u*v) == v*Grad(u) + u*Grad(v))
 ```
 
+## Towards more complicated expressions
+
+The forth rule we will implement is 
+
+>
+  $$
+  \newcommand{\grad}{\mathrm{grad}}
+  \begin{equation}
+    \grad(\frac{u}{v}) = \frac{\grad(u)}{v} - \frac{u~\grad(v)}{v^2}
+  \end{equation}
+  $$
+
+
+In fact, with our current implementation, we have the following 
+
+$$
+\newcommand{\grad}{\mathrm{grad}}
+\begin{equation*}
+  \grad(u/v) = u~\grad(1/v) + \grad(u)/v
+\end{equation*}
+$$
+
+which is not exactly what we want. In fact, what is missing is the rule to compute the **Grad** of **1/v**. For this, we need to check if the type of **expr** is **Pow** (the associated node in sympy).
+
+In general, if the **eval** fails, you can print the type of the argument of **Grad**, which will give you what is the node to be treated.
+
+```python
+> print(type(1/v))
+<class 'sympy.core.power.Pow'>
+```
+
+Implementing this rule is the following, after the **Mul** node:
+```python
+    @classmethod
+    def eval(cls, expr):
+
+        ...
+        if isinstance(expr, Pow):
+            b = expr.base
+            e = expr.exp
+            a = cls(b)
+            expr = expr.func(b, e-1)
+            if isinstance(a, Add):
+                expr = reduce(add, [e*expr*i for i in a.args])
+            else:
+                expr = e*a*expr
+            return
+
+        ...
+```
+
+Now we ensure that 
+```python
+assert(Grad(u/v) == -u*Grad(v)*v**(-2) + v**(-1)*Grad(u))
+```
+
