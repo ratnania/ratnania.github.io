@@ -6,10 +6,7 @@ title: Building a Computer Algebra System (CAS) - Part (2)
 In this post, we will add the following things
 
 - Vector functions
-- the differential operators **curl** and **div**
 - the algebraic operation **dot**
-
-Finally, we will see what are the additional calculus identities that we will be able to cover.
 
 ## Space of vector functions
 
@@ -270,3 +267,7 @@ A simple trick to fix this, is to add the following statement, just before the c
         obj = Basic.__new__(cls, a, b)
 ```
 This will ensure that a given order is always preserved. You can test it.
+
+## Getting the code
+
+You can find the code associated to this post [here](https://github.com/ratnania/ratnania.github.io/blob/gh-pages/codes/building-cas-using-sympy/step_2.py).
