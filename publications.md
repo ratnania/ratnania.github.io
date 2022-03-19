@@ -6,6 +6,9 @@ permalink: /publications/
 
 ### Peer Reviewed Journals
 
+
+15. K. Jbilou, M. El Guide and A. Ratnani, RBF Approximation of three dimensional pdes using Tensor Krylov subspace methods,  *Engineering Analysis with Boundary Elements, 2022*
+15. M.A. Hamadi, K. Jbilou and A. Ratnani, [An efficient extended block Arnoldi algorithm for feedback stabilization of incompressible Navier-Stokes flow problems](https://www.sciencedirect.com/science/article/abs/pii/S0168927422000113), *Applied Numerical Mathematics, 2022*
 14. M.A. Hamadi, K. Jbilou and A. Ratnani, [An efficient extended block Arnoldi algorithm for feedback stabilization of incompressible Navier-Stokes flow problems](https://www.sciencedirect.com/science/article/abs/pii/S0168927422000113), *Applied Numerical Mathematics, 2022*
 13. A. Bentbib, A. El-Hachimi, K. Jbilou and A. Ratnani, [On the tensor nuclear norm and the total variation regularization for image and video completion](https://link.springer.com/article/10.1007%2Fs10957-021-01947-3), *Journal of Optimization Theory and Applications, 2021*
 12. A. Chkifa, M. A. Hamadi, K. Jbilou and A. Ratnani [A computational method for model reduction in index-2 dynamical systems for Stokes equations](https://www.sciencedirect.com/science/article/pii/S0898122121002935). *Computers and Mathelmatics with Applications, 99, October 2021*
